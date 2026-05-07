@@ -27,7 +27,6 @@ console.log(arr3);
 
 //Object
 
-
 let person = {
     name: "Jk",
     age: 23,
