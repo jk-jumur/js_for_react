@@ -3,9 +3,9 @@
 //      .then ((res) => res.json())
 //      .then(data => {
 //         //   console.log(data)
-//           throw new Error("unknown error");
+//           throw new Error("--------unknown error");
 //      })
-//      .catch((e) => console.log(e));
+//      .catch((e) => console.log(e.message));
 //  }
 
 //  fetchUsers();
@@ -14,10 +14,19 @@
  //ES6 er Formate
 
  const fetchUsers = async () =>{
+          //Loading true
+    try{
      const res = await fetch ("https://jsonplaceholder.typicode.com/users")
+      throw new Error("unknown error");
      const data = await res.json();
      console.log(data);
+     } catch (err) {
+         console.log(err.message, "error block triggered"); 
+     } finally{
+         console.log("I am finally block, always triggered");
+         //Loading false
+     }
 
- }
+ };
 
  fetchUsers();
