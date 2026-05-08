@@ -9,7 +9,12 @@
     brand: "Apple",
     model: "iPhone 15",
     price: 999,
-    stock: 12
+    stock: 12,
+    company: {
+        name: "Apple",
+        bs: "test"
+
+    }
   },
 
   {
@@ -18,7 +23,13 @@
     brand: "Samsung",
     model: "Galaxy S24",
     price: 899,
-    stock: 8
+    stock: 8,
+     company: {
+        name: "Apple",
+        bs: "test"
+
+    }
+    
   },
 
   {
@@ -28,7 +39,12 @@
     model: "Pixel 8",
     price: 699,
     stock: 15,
-    isExpensive: false
+    isExpensive: false,
+     company: {
+        name: "Apple",
+        bs: "test"
+
+    }
   },
 
   {
@@ -38,7 +54,12 @@
     model: "MacBook Air M3",
     price: 1299,
     stock: 5,
-    isExpensive: true
+    isExpensive: true,
+     company: {
+        name: "Apple",
+        bs: "test"
+
+    }
   },
 
   {
@@ -47,7 +68,12 @@
     brand: "Dell",
     model: "XPS 15",
     price: 1499,
-    stock: 7
+    stock: 7,
+     company: {
+        name: "Apple",
+        bs: "test"
+
+    }
   },
 
   {
@@ -56,7 +82,12 @@
     brand: "Lenovo",
     model: "ThinkPad X1",
     price: 1399,
-    stock: 4
+    stock: 4,
+     company: {
+        name: "Apple",
+        bs: "test"
+
+    }
   }
 ];
 
@@ -107,7 +138,18 @@ const expensivePhones1 = products.find((pd) => pd.price >= 3000);
 // const expensiveLaptops = products.filter(pd => pd.price >= 1000 && pd.type === "laptop").map(pd=> ({...pd, isExpensive: true }));
 
 
-const expensiveLaptops = products.filter(pd => pd.price >= 1000 && pd.type === "laptop")
-.map((pd)=> ({id: pd.id,  name: pd.model, brand: pd.brand }));
+// const expensiveLaptops = products.filter(pd => pd.price >= 1000 && pd.type === "laptop")
+// .map((pd)=> ({id: pd.id,  name: pd.model, brand: pd.brand }));
+
+// console.log(expensiveLaptops);
+
+const expensiveLaptops = products.filter((pd) => pd.price >= 1000 && pd.type === "laptop")
+.map((pd) => ({
+     id: pd.id,
+     name: pd.model,
+     brand: pd.brand,
+    //  company: pd.company
+      companyName: pd.company?.name
+}));
 
 console.log(expensiveLaptops);
